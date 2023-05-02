@@ -37,7 +37,7 @@ function generate() {
  */
 
 export const AnimationOptionsFormat = {
-    
+    duration: "infinite";
 }
 
 /**
