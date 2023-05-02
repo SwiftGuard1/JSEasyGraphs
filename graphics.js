@@ -23,6 +23,17 @@ export class DOMGraphics {
     return elem;
   }
 
+  createSquare(length, x, y) {
+    let elem = document.createElement("div");
+    elem.style.backgroundColor = this.#color;
+    elem.style.width = length;
+    elem.style.height = length;
+    elem.style.position = "absolute";
+    elem.style.left = x;
+    elem.style.top = y;
+    return elem;
+  }
+
   createCircle(diameter, x, y) {
     let elem = document.createElement("div");
     elem.style.backgroundColor = this.#color;
@@ -48,7 +59,19 @@ export class DOMGraphics {
     return elem;
   }
 
-  insertGraphics(element) {
+  createOval(width, height, x, y) {
+    let elem = document.createElement("div");
+    elem.style.width = width;
+    elem.style.height = height;
+    elem.style.backgroundColor = this.#color;
+    elem.style.borderRadius = "50%";
+    elem.style.position = "absolute";
+    elem.style.left = x;
+    elem.style.top = y;
+    return elem;
+  }
+
+  insertGraphic(element) {
     document.body.appendChild(element);
   }
 }

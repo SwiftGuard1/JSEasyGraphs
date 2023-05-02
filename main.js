@@ -14,7 +14,10 @@ Graphics.setDrawColor("green");
 
 let triangle = Graphics.createTriangle("60px", "100px", "300px", "300px");
 
-Graphics.insertGraphics(text);
-Graphics.insertGraphics(rectangle);
-Graphics.insertGraphics(circle);
-Graphics.insertGraphics(triangle);
+let oval = Graphics.createOval("100px", "50px", "400px", "400px");
+
+Graphics.insertGraphic(text);
+Graphics.insertGraphic(rectangle);
+Graphics.insertGraphic(circle);
+Graphics.insertGraphic(triangle);
+Graphics.insertGraphic(oval)
