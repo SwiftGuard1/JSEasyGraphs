@@ -30,6 +30,8 @@ oval = Animations.applyAnimation(
   { location: "100%", property: "background-color", value: "red" },
 );
 
+oval = Graphics.makeDraggable(oval)
+
 Graphics.insertGraphic(text);
 Graphics.insertGraphic(rectangle);
 Graphics.insertGraphic(circle);

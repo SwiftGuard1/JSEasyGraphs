@@ -70,6 +70,12 @@ export class DOMGraphics {
     elem.style.top = y;
     return elem;
   }
+  
+  makeDraggable(element) {
+    let newElem = element
+    newElem.draggable = true;
+    return newElem
+  }
 
   insertGraphic(element) {
     document.body.appendChild(element);
