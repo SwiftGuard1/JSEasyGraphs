@@ -25,12 +25,12 @@ oval = Animations.applyAnimation(
     easingStyle: "ease-in-out",
     loopTimes: "infinite",
   },
-  { location: "0%", property: "background-color", value: "red" },
-  { location: "50%", property: "background-color", value: "purple" },
-  { location: "100%", property: "background-color", value: "red" },
+  { location: "0%", property: "background-color", value: "cyan" },
+  { location: "50%", property: "background-color", value: "red" },
+  { location: "100%", property: "background-color", value: "cyan" },
 );
 
-oval = Graphics.makeDraggable(oval)
+Graphics.makeDraggable(circle);
 
 Graphics.insertGraphic(text);
 Graphics.insertGraphic(rectangle);
