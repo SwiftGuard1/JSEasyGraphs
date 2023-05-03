@@ -228,15 +228,19 @@ export class DOMGraphics {
     this.#color = color;
   }
 
-  createText(text = "Hello World!") {
+  createText(text = "Hello World!", x, y, layer) {
     let elem = document.createElement("label");
     elem.innerHTML = text;
     elem.style.color = this.#color;
+    elem.style.position = "absolute";
+    elem.style.left = x;
+    elem.style.top = y;
+    elem.style.zIndex = layer;
     elem.id = generate();
     return elem;
   }
 
-  createRect(width, height, x, y) {
+  createRect(width, height, x, y, layer) {
     let elem = document.createElement("div");
     elem.style.backgroundColor = this.#color;
     elem.style.width = width;
@@ -244,11 +248,12 @@ export class DOMGraphics {
     elem.style.position = "absolute";
     elem.style.left = x;
     elem.style.top = y;
+    elem.style.zIndex = layer;
     elem.id = generate();
     return elem;
   }
 
-  createSquare(length, x, y) {
+  createSquare(length, x, y, layer) {
     let elem = document.createElement("div");
     elem.style.backgroundColor = this.#color;
     elem.style.width = length;
@@ -256,11 +261,12 @@ export class DOMGraphics {
     elem.style.position = "absolute";
     elem.style.left = x;
     elem.style.top = y;
+    elem.style.zIndex = layer;
     elem.id = generate();
     return elem;
   }
 
-  createCircle(diameter, x, y) {
+  createCircle(diameter, x, y, layer) {
     let elem = document.createElement("div");
     elem.style.backgroundColor = this.#color;
     elem.style.width = diameter;
@@ -269,11 +275,12 @@ export class DOMGraphics {
     elem.style.left = x;
     elem.style.top = y;
     elem.style.borderRadius = `calc(${diameter}/2)`;
+    elem.style.zIndex = layer;
     elem.id = generate();
     return elem;
   }
 
-  createTriangle(width, height, x, y) {
+  createTriangle(width, height, x, y, layer) {
     let elem = document.createElement("div");
     elem.style.width = 0;
     elem.style.height = 0;
@@ -283,11 +290,12 @@ export class DOMGraphics {
     elem.style.position = "absolute";
     elem.style.left = x;
     elem.style.top = y;
+    elem.style.zIndex = layer;
     elem.id = generate();
     return elem;
   }
 
-  createOval(width, height, x, y) {
+  createOval(width, height, x, y, layer) {
     let elem = document.createElement("div");
     elem.style.width = width;
     elem.style.height = height;
@@ -296,6 +304,7 @@ export class DOMGraphics {
     elem.style.position = "absolute";
     elem.style.left = x;
     elem.style.top = y;
+    elem.style.zIndex = layer;
     elem.id = generate();
     return elem;
   }
