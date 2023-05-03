@@ -26,13 +26,15 @@ oval = Animations.applyAnimation(
     easingStyle: "ease-in-out",
     loopTimes: "infinite",
   },
-  { location: "0%", property: "background-color", value: "cyan" },
-  { location: "50%", property: "background-color", value: "red" },
-  { location: "100%", property: "background-color", value: "cyan" },
+  { location: "0%", property: "background-color", value: "red" },
+  { location: "25%", property: "background-color", value: "cyan" },
+  { location: "50%", property: "background-color", value: "blue" },
+  { location: "75%", property: "background-color", value: "purple" },
+  { location: "100%", property: "background-color", value: "red" },
 );
 
-Graphics.makeDraggable(circle);
-Graphics.makeDraggable(oval);
+circle = Graphics.makeDraggable(circle);
+oval = Graphics.makeDraggable(oval);
 
 Graphics.insertGraphic(text);
 Graphics.insertGraphic(rectangle);
