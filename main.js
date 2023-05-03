@@ -22,14 +22,16 @@ let oval = Graphics.createOval("100px", "50px", "400px", "400px");
 oval = Animations.applyAnimation(
   oval,
   {
-    duration: "1s",
+    duration: "2s",
     easingStyle: "ease-in-out",
     loopTimes: "infinite",
   },
   { location: "0%", property: "background-color", value: "red" },
-  { location: "25%", property: "background-color", value: "cyan" },
-  { location: "50%", property: "background-color", value: "blue" },
-  { location: "75%", property: "background-color", value: "purple" },
+  { location: "16.6666666667%", property: "background-color", value: "orange" },
+  { location: "33.3333333334%", property: "background-color", value: "yellow" },
+  { location: "50.0000000001%", property: "background-color", value: "green" },
+  { location: "66.6666666668%", property: "background-color", value: "blue" },
+  { location: "83.3333333335%", property: "background-color", value: "purple" },
   { location: "100%", property: "background-color", value: "red" },
 );
 
