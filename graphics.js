@@ -317,3 +317,24 @@ export class DOMGraphics {
     document.body.appendChild(element);
   }
 }
+
+export class LightingPhysics {
+  /**
+   * Creates and centers a radial gradient behind an element to give the effetc of ementating light.
+   * Intensity affects transparency
+   * Power affects how far the color is pushed out from the center
+   * Range affects how large the diameter is.
+   * 
+   * @param {HTMLElement} element 
+   * @param {*} color 
+   * @param {Number} intensity 
+   * @param {Number} power 
+   * @param {Number} range 
+   */
+  applyLightSource(element, color, intensity, power, range) {
+    let lightSource = document.createElement("div")
+    lightSource.id = element.id + "-light"
+    lightSource.style.left = element.style.left
+    lightSource.style.width = range;
+  }
+}
