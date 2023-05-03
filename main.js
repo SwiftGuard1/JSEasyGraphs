@@ -1,5 +1,6 @@
 import { DOMGraphics } from "./graphics.js";
 import { AnimationController, KeyframeFormat } from "./animation.js";
+import { LocalManager } from "./storageManager.js";
 
 const Graphics = new DOMGraphics();
 const Animations = new AnimationController();
@@ -31,6 +32,7 @@ oval = Animations.applyAnimation(
 );
 
 Graphics.makeDraggable(circle);
+Graphics.makeDraggable(oval);
 
 Graphics.insertGraphic(text);
 Graphics.insertGraphic(rectangle);
