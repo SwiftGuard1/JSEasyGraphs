@@ -1,9 +1,8 @@
-import { DOMGraphics, LightingPhysics } from "./graphics.js";
+import { DOMGraphics } from "./graphics.js";
 import { AnimationController, KeyframeFormat } from "./animation.js";
 import { LocalManager } from "./storageManager.js";
 
 const Graphics = new DOMGraphics();
-const LightSystem = new LightingPhysics();
 const Animations = new AnimationController();
 
 Graphics.setDrawColor("red");
@@ -39,7 +38,7 @@ oval = Animations.applyAnimation(
 circle = Graphics.makeDraggable(circle);
 oval = Graphics.makeDraggable(oval);
 
-LightSystem.applyLightSource(triangle, { red: 255, green: 239, blue: 0 }, 0.75, 25, "500px", 75);
+//LightSystem.applyLightSource(triangle, { red: 255, green: 239, blue: 0 }, 0.75, 25, "500px", 75);
 
 Graphics.insertGraphic(text);
 Graphics.insertGraphic(rectangle);

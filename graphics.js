@@ -327,7 +327,7 @@ export const ColorFormat = {
   blue: 0,
 };
 
-export class LightingPhysics {
+class LightingPhysics {
   /**
    * Creates and centers a radial gradient behind an element to give the effetc of ementating light.
    * Intensity affects transparency
@@ -350,8 +350,8 @@ export class LightingPhysics {
       lightSource.style.position = "absolute";
       lightSource.style.width = range;
       lightSource.style.height = range;
-      lightSource.style.left = `calc(${element.style.left} - ${lightSource.style.width}/2.75)`;
-      lightSource.style.top = `calc(${element.style.top} - ${lightSource.style.height}/2.75)`;
+      lightSource.style.left = `calc(${element.style.left} - ${lightSource.style.width}/2.5)`;
+      lightSource.style.top = `calc(${element.style.top} - ${lightSource.style.height}/2.5)`;
       lightSource.style.zIndex = element.style.zIndex - 1;
       lightSource.style.borderRadius = "999999999px";
       lightSource.style.opacity = intensity;
