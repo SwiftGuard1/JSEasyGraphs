@@ -5,19 +5,25 @@ import { LocalManager } from "./storageManager.js";
 const Graphics = new DOMGraphics();
 const Animations = new AnimationController();
 
+Graphics.generateDebugTool()
+
 Graphics.setDrawColor("red");
+Graphics.setDebug(true);
 
 let text = Graphics.createText();
 
-let rectangle = Graphics.createRect("100px", "100px", "100px", "100px");
+let rectangle = Graphics.createRect("50px", "75px", "100px", "100px");
 
 let circle = Graphics.createCircle("100px", "200px", "200px");
+
+let oval2 = Graphics.createOval("50px", "100px", "400px", "400px");
+let oval3 = Graphics.createOval("50px", "100px", "400px", "400px");
 
 Graphics.setDrawColor("green");
 
 let triangle = Graphics.createTriangle("60px", "100px", "300px", "300px");
 
-let oval = Graphics.createOval("100px", "50px", "400px", "400px");
+let oval = Graphics.createOval("100px", "50px", "400px", "400px", 100);
 
 oval = Animations.applyAnimation(
   oval,
@@ -37,6 +43,9 @@ oval = Animations.applyAnimation(
 
 circle = Graphics.makeDraggable(circle);
 oval = Graphics.makeDraggable(oval);
+oval2 = Graphics.makeDraggable(oval2);
+oval3 = Graphics.makeDraggable(oval3);
+rectangle = Graphics.makeDraggable(rectangle);
 
 //LightSystem.applyLightSource(triangle, { red: 255, green: 239, blue: 0 }, 0.75, 25, "500px", 75);
 
@@ -45,3 +54,5 @@ Graphics.insertGraphic(rectangle);
 Graphics.insertGraphic(circle);
 Graphics.insertGraphic(triangle);
 Graphics.insertGraphic(oval);
+Graphics.insertGraphic(oval2);
+Graphics.insertGraphic(oval3);

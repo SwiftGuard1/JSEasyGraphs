@@ -226,6 +226,15 @@ function dragElement(elmnt) {
 
 export class DOMGraphics {
   #color = "black";
+  #debug = false;
+
+  generateDebugTool() {
+    document.body.insertAdjacentHTML("beforeend", "<div id=\"attribs\" style=\"position: absolute; right: 0;\"></div>")
+  }
+
+  setDebug(bool) {
+    this.#debug = bool;
+  }
 
   setDrawColor(color) {
     this.#color = color;
@@ -240,6 +249,11 @@ export class DOMGraphics {
     elem.style.top = y;
     elem.style.zIndex = layer;
     elem.id = generate();
+    if (this.#debug === true) {
+      elem.onmouseover = function(){
+        document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
+      };
+    }
     return elem;
   }
 
@@ -253,10 +267,15 @@ export class DOMGraphics {
     elem.style.top = y;
     elem.style.zIndex = layer;
     elem.id = generate();
+    if (this.#debug === true) {
+      elem.onmouseover = function(){
+        document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
+      };
+    }
     return elem;
   }
 
-  createSquare(length, x, y, layer) {
+  createSquare(length, x, y, layer, drag = false) {
     let elem = document.createElement("div");
     elem.style.backgroundColor = this.#color;
     elem.style.width = length;
@@ -266,6 +285,11 @@ export class DOMGraphics {
     elem.style.top = y;
     elem.style.zIndex = layer;
     elem.id = generate();
+    if (this.#debug === true) {
+      elem.onmouseover = function(){
+        document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
+      };
+    }
     return elem;
   }
 
@@ -280,6 +304,11 @@ export class DOMGraphics {
     elem.style.borderRadius = `calc(${diameter}/2)`;
     elem.style.zIndex = layer;
     elem.id = generate();
+    if (this.#debug === true) {
+      elem.onmouseover = function(){
+        document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
+      };
+    }
     return elem;
   }
 
@@ -295,6 +324,11 @@ export class DOMGraphics {
     elem.style.top = y;
     elem.style.zIndex = layer;
     elem.id = generate();
+    if (this.#debug === true) {
+      elem.onmouseover = function(){
+        document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
+      };
+    }
     return elem;
   }
 
@@ -309,6 +343,11 @@ export class DOMGraphics {
     elem.style.top = y;
     elem.style.zIndex = layer;
     elem.id = generate();
+    if (this.#debug === true) {
+      elem.onmouseover = function(){
+        document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
+      };
+    }
     return elem;
   }
 
