@@ -184,8 +184,11 @@ function generate() {
 }
 
 function dragElement(elmnt) {
-  var newElem = elmnt
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+  var newElem = elmnt;
+  var pos1 = 0,
+    pos2 = 0,
+    pos3 = 0,
+    pos4 = 0;
   newElem.onmousedown = dragMouseDown;
 
   function dragMouseDown(e) {
@@ -208,8 +211,8 @@ function dragElement(elmnt) {
     pos3 = e.clientX;
     pos4 = e.clientY;
     // set the element's new position:
-    newElem.style.top = (newElem.offsetTop - pos2) + "px";
-    newElem.style.left = (newElem.offsetLeft - pos1) + "px";
+    newElem.style.top = newElem.offsetTop - pos2 + "px";
+    newElem.style.left = newElem.offsetLeft - pos1 + "px";
   }
 
   function closeDragElement() {
@@ -218,7 +221,7 @@ function dragElement(elmnt) {
     document.onmousemove = null;
   }
 
-  return newElem
+  return newElem;
 }
 
 export class DOMGraphics {
@@ -318,23 +321,39 @@ export class DOMGraphics {
   }
 }
 
+export const ColorFormat = {
+  red: 0,
+  green: 0,
+  blue: 0,
+};
+
 export class LightingPhysics {
   /**
    * Creates and centers a radial gradient behind an element to give the effetc of ementating light.
    * Intensity affects transparency
    * Power affects how far the color is pushed out from the center
    * Range affects how large the diameter is.
-   * 
-   * @param {HTMLElement} element 
-   * @param {*} color 
-   * @param {Number} intensity 
-   * @param {Number} power 
-   * @param {Number} range 
+   * Ending is the position where the light ends in percenatages.
+   *
+   * @param {HTMLElement} element
+   * @param {ColorFormat} color
+   * @param {Number} intensity
+   * @param {Number} power
+   * @param {Number} range
+   * @param {Number} ending
    */
-  applyLightSource(element, color, intensity, power, range) {
-    let lightSource = document.createElement("div")
-    lightSource.id = element.id + "-light"
-    lightSource.style.left = element.style.left
+  applyLightSource(element, color, intensity, power, range, ending) {
+    let lightSource = document.createElement("div");
+    lightSource.id = element.id + "-light";
+    lightSource.style = `background: radial-gradient(circle, rgba(${color.red},${color.green},${color.blue},1) 0%, rgba(${color.red},${color.green},${color.blue},1) ${power}%, rgba(255,255,255,0) ${ending}%)`
+    lightSource.style.position = "absolute";
+    lightSource.style.left = `calc(${element.style.left} - ${element.style.width}/4)`;
+    lightSource.style.top = `calc(${element.style.top} - ${element.style.height}/4)`;
+    lightSource.style.zIndex = element.style.zIndex - 1;
     lightSource.style.width = range;
+    lightSource.style.height = range;
+    lightSource.style.borderRadius = "999999999px";
+    lightSource.style.opacity = intensity;
+    document.body.appendChild(lightSource);
   }
 }

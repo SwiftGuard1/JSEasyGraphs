@@ -1,8 +1,9 @@
-import { DOMGraphics } from "./graphics.js";
+import { DOMGraphics, LightingPhysics } from "./graphics.js";
 import { AnimationController, KeyframeFormat } from "./animation.js";
 import { LocalManager } from "./storageManager.js";
 
 const Graphics = new DOMGraphics();
+const LightSystem = new LightingPhysics();
 const Animations = new AnimationController();
 
 Graphics.setDrawColor("red");
@@ -32,11 +33,13 @@ oval = Animations.applyAnimation(
   { location: "50.0000000001%", property: "background-color", value: "green" },
   { location: "66.6666666668%", property: "background-color", value: "blue" },
   { location: "83.3333333335%", property: "background-color", value: "purple" },
-  { location: "100%", property: "background-color", value: "red" },
+  { location: "100%", property: "background-color", value: "red" }
 );
 
 circle = Graphics.makeDraggable(circle);
 oval = Graphics.makeDraggable(oval);
+
+LightSystem.applyLightSource(triangle, { red: 255, green: 239, blue: 0 }, 0.5, 25, "250px", 80);
 
 Graphics.insertGraphic(text);
 Graphics.insertGraphic(rectangle);
