@@ -190,6 +190,7 @@ function dragElement(elmnt) {
     pos3 = 0,
     pos4 = 0;
   newElem.onmousedown = dragMouseDown;
+  newElem.innerText = ""
 
   function dragMouseDown(e) {
     e = e || window.event;
@@ -253,6 +254,7 @@ export class DOMGraphics {
       elem.onmouseover = function(){
         document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
       };
+      elem.innerText += "⚓"
     }
     return elem;
   }
@@ -271,6 +273,10 @@ export class DOMGraphics {
       elem.onmouseover = function(){
         document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
       };
+      elem.style.display = "flex";
+      elem.style.justifyContent = "center";
+      elem.style.lineHeight = elem.style.height;
+      elem.innerText = "⚓"
     }
     return elem;
   }
@@ -289,6 +295,10 @@ export class DOMGraphics {
       elem.onmouseover = function(){
         document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
       };
+      elem.style.display = "flex";
+      elem.style.justifyContent = "center";
+      elem.style.lineHeight = elem.style.height;
+      elem.innerText = "⚓"
     }
     return elem;
   }
@@ -308,6 +318,10 @@ export class DOMGraphics {
       elem.onmouseover = function(){
         document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
       };
+      elem.style.display = "flex";
+      elem.style.justifyContent = "center";
+      elem.style.lineHeight = elem.style.height;
+      elem.innerText = "⚓"
     }
     return elem;
   }
@@ -328,6 +342,10 @@ export class DOMGraphics {
       elem.onmouseover = function(){
         document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
       };
+      elem.style.display = "flex";
+      elem.style.justifyContent = "center";
+      elem.style.lineHeight = elem.style.height;
+      elem.innerText = "⚓"
     }
     return elem;
   }
@@ -347,6 +365,10 @@ export class DOMGraphics {
       elem.onmouseover = function(){
         document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
       };
+      elem.style.display = "flex";
+      elem.style.justifyContent = "center";
+      elem.style.lineHeight = elem.style.height;
+      elem.innerText = "⚓"
     }
     return elem;
   }
