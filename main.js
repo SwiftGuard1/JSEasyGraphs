@@ -39,7 +39,7 @@ oval = Animations.applyAnimation(
 circle = Graphics.makeDraggable(circle);
 oval = Graphics.makeDraggable(oval);
 
-LightSystem.applyLightSource(triangle, { red: 255, green: 239, blue: 0 }, 0.5, 25, "250px", 80);
+LightSystem.applyLightSource(triangle, { red: 255, green: 239, blue: 0 }, 0.75, 25, "500px", 75);
 
 Graphics.insertGraphic(text);
 Graphics.insertGraphic(rectangle);

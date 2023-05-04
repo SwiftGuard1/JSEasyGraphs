@@ -347,11 +347,11 @@ export class LightingPhysics {
     lightSource.id = element.id + "-light";
     lightSource.style = `background: radial-gradient(circle, rgba(${color.red},${color.green},${color.blue},1) 0%, rgba(${color.red},${color.green},${color.blue},1) ${power}%, rgba(255,255,255,0) ${ending}%)`
     lightSource.style.position = "absolute";
-    lightSource.style.left = `calc(${element.style.left} - ${element.style.width}/4)`;
-    lightSource.style.top = `calc(${element.style.top} - ${element.style.height}/4)`;
-    lightSource.style.zIndex = element.style.zIndex - 1;
     lightSource.style.width = range;
     lightSource.style.height = range;
+    lightSource.style.left = `calc(${element.style.left} - ${lightSource.style.width}/2.75)`;
+    lightSource.style.top = `calc(${element.style.top} - ${lightSource.style.height}/2.75)`;
+    lightSource.style.zIndex = element.style.zIndex - 1;
     lightSource.style.borderRadius = "999999999px";
     lightSource.style.opacity = intensity;
     document.body.appendChild(lightSource);
