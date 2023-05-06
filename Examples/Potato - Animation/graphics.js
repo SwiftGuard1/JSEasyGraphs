@@ -373,28 +373,6 @@ export class DOMGraphics {
     return elem;
   }
 
-  createImage(source, width, height, x, y, layer) {
-    let elem = document.createElement("img");
-    elem.style.width = width;
-    elem.style.height = height;
-    elem.src = source;
-    elem.style.position = "absolute";
-    elem.style.left = x;
-    elem.style.top = y;
-    elem.style.zIndex = layer;
-    elem.id = generate();
-    if (this.#debug === true) {
-      elem.onmouseover = function(){
-        document.getElementById("attribs").innerHTML = `X: ${elem.style.left}, Y: ${elem.style.top}`
-      };
-      elem.style.display = "flex";
-      elem.style.justifyContent = "center";
-      elem.style.lineHeight = elem.style.height;
-      elem.innerText = "⚓"
-    }
-    return elem;
-  }
-
   makeDraggable(element) {
     return dragElement(element);
   }
