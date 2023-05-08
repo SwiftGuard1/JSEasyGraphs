@@ -1,6 +1,7 @@
 import { DOMGraphics } from "./graphics.js";
 import { AnimationController, KeyframeFormat } from "./animation.js";
 import { LocalManager } from "./storageManager.js";
+import { Audio2D } from "./audio.js";
 
 const Graphics = new DOMGraphics();
 const Animations = new AnimationController();

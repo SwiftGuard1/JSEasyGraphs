@@ -183,7 +183,7 @@ function generate() {
     return result + result2;
 }
 
-export class FlatAudio {
+export class Audio2D {
     #volume = 1;
     #element = "";
     setVolume(volume) {
@@ -197,9 +197,25 @@ export class FlatAudio {
     setAudioSource(url) {
         document.getElementById(this.#element).src = url;
     }
+
+    setPlaying(playing) {
+        if (playing === true) {
+            document.getElementById(this.#element).play();
+        } else {
+            document.getElementById(this.#element).pause();
+        }
+    }
+
+    setLoop(looping) {
+        document.getElementById(this.#element).loop = looping
+    }
+
+    showControls(controls) {
+        document.getElementById(this.#element).controls = controls
+    }
 }
 
-export class PanningAudio {
+class Audio3D {
     #volume = 1;
     #element = "";
     setVolume(volume) {
@@ -216,6 +232,14 @@ export class PanningAudio {
 
     setPan(pan) {
         this.#stereoNode.pan = pan
+    }
+
+    setPlaying(playing) {
+        if (playing === true) {
+            document.getElementById(this.#element).play();
+        } else {
+            document.getElementById(this.#element).pause();
+        }
     }
 
     // for legacy browsers
