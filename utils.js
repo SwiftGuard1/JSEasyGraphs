@@ -14,4 +14,6 @@ export class Utilities {
     RandNumGen(min, max) {
         return rannumgen(min, max)
     }
+
+    clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 }
