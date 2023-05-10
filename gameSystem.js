@@ -54,3 +54,25 @@ class RegulatedHealthSystem {
         this.setHealth(newHealth)
     }
 }
+
+class InventorySystem {
+    #utilties = new Utilities()
+
+    #maxSlots = 3;
+
+    #inventory = [{item:'',data:''}]
+
+    setMaxSlots(slots) {
+        this.#maxSlots = slots
+    }
+
+    addItem(itemID, itemData) {
+        if (this.#inventory.length<=this.#maxSlots) {
+            this.#inventory.push({item:itemID,data:itemData})
+        }
+    }
+
+    removeItem(index) {
+        this.#inventory.splice(index, 1)
+    }
+}
